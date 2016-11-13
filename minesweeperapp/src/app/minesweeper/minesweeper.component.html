@@ -1,0 +1,8 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+      <p>minesweeper app</p>
+      <div class="row-sm-1" *ngFor="let boxRow of sweeperBoxes">
+        <sweeperbox class="col-sm-1" *ngFor="let sweeperBox of boxRow; let i = index" [field]=sweeperBox></sweeperbox>
+      </div>
+  </div>
+</div>
