@@ -9,7 +9,7 @@ simple angular2 minesweeper application
 * cd into minesweeperapp 
 * npm install
 
-###. run
+### run
 * cd into minesweeperapp
 * npm start
 
