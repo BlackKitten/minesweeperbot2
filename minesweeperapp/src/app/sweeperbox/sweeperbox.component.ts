@@ -13,12 +13,14 @@ export class SweeperboxComponent implements OnInit {
   @Output() leftClick = new EventEmitter<Field>();
   @Output() rightClick = new EventEmitter<Field>();
 
-  constructor(private httpService:HttpService) { }
+  constructor(private httpService:HttpService) {
+  }
 
   questionMark:boolean = false;
   clicked:boolean = false;
 
   ngOnInit() {
+    this.field.click.subscribe(() => {this.left()});
   }
 
 

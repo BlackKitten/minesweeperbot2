@@ -1,0 +1,21 @@
+table {
+  margin: 0px;
+  padding: 0px;
+  width: 500px;
+  height: 500px;
+}
+
+tr {
+  height: 50px;
+  width: 500px;
+}
+
+td {
+  height: 50px;
+  width: 50px;
+}
+
+sweeperbox {
+  height: 50px;
+  width: 50px;
+}

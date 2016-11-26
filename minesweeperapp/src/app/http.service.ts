@@ -27,6 +27,32 @@ export class HttpService {
         this.bombFields[x][y] = false;
       }
     }
+
+    this.publicFields.forEach(
+      (fieldArray:Field[], index:Number, fields:Field[][]) => {
+          fieldArray.forEach(
+            (field:Field) => {
+              field.surroundingFields = this.getSurroundingFields(field);
+            }
+          );
+      }
+    );
+  }
+
+
+  private getSurroundingFields(field: Field) : Field[] {
+    let surroundingFields : Field[] = [];
+
+    for(let x=field.x-1; x<=field.x+1; x++) {
+      for(let y=field.y-1; y<=field.y+1; y++) {
+        if( (x>=0 && x<this.xMax) && (y>=0 && y<this.yMax) ) {
+          surroundingFields.push(this.publicFields[x][y]);
+        }
+      }
+    }
+
+    return surroundingFields;
+
   }
 
   private placeBombs() {

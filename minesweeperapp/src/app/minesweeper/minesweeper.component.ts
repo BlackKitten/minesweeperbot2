@@ -19,8 +19,20 @@ export class MinesweeperComponent implements OnInit {
   }
 
   leftClick = (field: Field) => {
+    if(field.value == 0) {
+      this.clickBorderingFields(field);
+    }
+  }
+
+  private clickBorderingFields(field: Field) {
+    field.surroundingFields.forEach(
+      (field:Field) => {
+        field.click.emit();
+      }
+    );
 
   }
+
 
   rightClick = (field:Field) =>{
 
