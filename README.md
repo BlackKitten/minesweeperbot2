@@ -1,14 +1,15 @@
 # minesweeperbot2
 
-h1. minsweeperapp
+##  minsweeperapp
 
 simple angular2 minesweeper application
-h2. installation
-* download node && npm
-* cd into minesweeperapp 
-* npm install
 
-h2. run
-* cd into minesweeperapp
-* npm start
+### Installation
+. download node && npm
+. cd into minesweeperapp 
+. npm install
+
+###. run
+. cd into minesweeperapp
+. npm start
 
