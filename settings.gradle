@@ -1,3 +1,4 @@
 include 'minesweeperapp'
 include 'server'
+include 'solver'
 

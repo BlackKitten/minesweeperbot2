@@ -1,6 +1,6 @@
 package be.blackkitten;
 
-import be.blackkitten.minesweeperbot.server.Board;
+import be.blackkitten.minesweeper.server.Board;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 

@@ -1,4 +1,4 @@
-package be.blackkitten.minesweeperbot.server;
+package be.blackkitten.minesweeper.server;
 
 import java.util.List;
 
