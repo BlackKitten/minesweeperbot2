@@ -1,0 +1,25 @@
+version 'unspecified'
+
+apply plugin: 'java'
+apply plugin: 'idea'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven { url "https://repo.spring.io/snapshot" }
+    maven { url "https://repo.spring.io/milestone" }
+}
+
+dependencies {
+    compile 'be.blackkitten.commons:utilities:1'
+
+    compile 'org.springframework:spring-context:5.0.0.M3'
+    compile 'org.beykery:neuroph:2.92'
+    compile 'javax.inject:javax.inject:1'
+    compile 'com.google.guava:guava:20.0'
+
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    testCompile 'org.assertj:assertj-core:3.6.1'
+}
