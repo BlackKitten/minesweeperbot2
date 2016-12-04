@@ -1,6 +1,5 @@
 package be.blackkitten.minesweeperbot.solver.dataset;
 
-import com.google.common.collect.Lists;
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
 

@@ -1,6 +1,7 @@
 package be.blackkitten.minesweeperbot.solver.dataset;
 
 import be.blackkitten.commons.utilities.InstanceBuilder;
+import org.neuroph.core.data.DataSetRow;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -66,6 +67,11 @@ public class MineSet10x10 {
                 .findFirst();
     }
 
+    public DataSetRow toDataSetRow() {
+//        mineFields.stream().flatMap(mineField -> {
+//            mineField.getValue() })
+        throw new RuntimeException("not implemented");
+    }
 
     private static class Builder extends InstanceBuilder<MineSet10x10> {
 
