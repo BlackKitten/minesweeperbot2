@@ -12,8 +12,7 @@ public class MineFieldTest {
         MineField neighbor1 = new MineField(2, 2, true);
         subject.setSurroundingFields(Arrays.asList(neighbor1));
 
-        Assertions.assertThat(subject.getValue()).isEqualTo(1);
-
+        Assertions.assertThat(subject.getPrivateValue()).contains(1);
 
     }
 }

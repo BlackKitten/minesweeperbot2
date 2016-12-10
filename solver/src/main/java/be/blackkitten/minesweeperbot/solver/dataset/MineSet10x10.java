@@ -4,6 +4,7 @@ import be.blackkitten.commons.utilities.InstanceBuilder;
 import org.neuroph.core.data.DataSetRow;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.IntStream;
@@ -29,7 +30,9 @@ public class MineSet10x10 {
         mineFields.stream()
                 .forEach(mineField -> mineField.setSurroundingFields(
                         mineFields.stream()
-                                .filter(mineField1 -> {return PositionComparator.of(mineField).isSurroundingField(mineField1);})
+                                .filter(mineField1 -> {
+                                    return PositionComparator.of(mineField).isSurroundingField(mineField1);
+                                })
                                 .collect(toList())
                 ));
 
@@ -49,11 +52,13 @@ public class MineSet10x10 {
         return mineFields;
     }
 
-    public void print(){
+    public void print() {
         IntStream.rangeClosed(0, yMax).forEach(
                 y -> {
                     IntStream.rangeClosed(0, xMax).forEach(
-                            x -> {System.out.print(" \t" + getField(x,y).map(MineField::getText).orElse(""));}
+                            x -> {
+                                System.out.print(" \t" + getField(x, y).map(MineField::getText).orElse(""));
+                            }
                     );
                     System.out.println("");
                 }
@@ -68,9 +73,21 @@ public class MineSet10x10 {
     }
 
     public DataSetRow toDataSetRow() {
-//        mineFields.stream().flatMap(mineField -> {
-//            mineField.getValue() })
-        throw new RuntimeException("not implemented");
+        return new DataSetRow(getInputArray(), getOutputArray());
+    }
+
+    private double[] getInputArray() {
+        return this.mineFields.stream()
+                .map(mineField -> new DataSetValue().apply(mineField))
+                .mapToDouble(Double::doubleValue).toArray();
+    }
+
+    private double[] getOutputArray() {
+
+        Double input = getField(4, 4).get().isBomb() ? new Double(1) : new Double(0);
+        double[] outputArray = new double[1];
+        Arrays.fill(outputArray, input);
+        return outputArray;
     }
 
     private static class Builder extends InstanceBuilder<MineSet10x10> {

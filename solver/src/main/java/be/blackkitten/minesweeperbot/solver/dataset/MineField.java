@@ -38,6 +38,10 @@ public class MineField {
             return Optional.empty();
         }
 
+        return getPrivateValue();
+    }
+
+    public Optional<Integer> getPrivateValue() {
         return (Optional.of((int) surroundingFields.stream()
                 .filter(MineField::isBomb)
                 .count()));
